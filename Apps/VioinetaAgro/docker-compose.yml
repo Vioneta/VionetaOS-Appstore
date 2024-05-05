@@ -1,0 +1,74 @@
+name: vionetagro
+services:
+  vionetagro:
+    environment:
+      PGID: $PGID
+      PUID: $PUID
+      TZ: $TZ
+    image: linuxserver/homeassistant:2023.11.3
+    deploy:
+      resources:
+        reservations:
+          memory: 256M
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/config
+        target: /config
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: TimeZone
+            zh_cn: 时区
+        - container: PUID
+          description:
+            en_us: Run Vionet Agro as specified uid.
+            zh_cn: 以指定的uid运行Vionet Agro
+        - container: PGID
+          description:
+            en_us: Run Vionet Agro as specified gid.
+            zh_cn: 以指定的gid运行Vionet Agro
+
+      volumes:
+        - container: /config
+          description:
+            en_us: Vioneta Agro config directory.
+            zh_cn: Vioneta Agro配置目录
+    container_name: vionetagro
+  architectures:
+    - amd64
+    - arm64
+  main: vionetagro
+  author: Vioneta Team
+  category: Agriculture
+  description:
+    en_us: Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.
+  developer: Home Assistant
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-4.jpg
+  tagline:
+    en_us: Awaken your home
+    zh_cn: 唤醒你的家
+    ar_sa: انعاش منزلك
+    de_de: Wecken Sie Ihr Zuhause
+    es_es: Despierta tu hogar
+    fr_fr: Réveillez votre maison
+    hu_hu: Ébreszd fel otthonod
+    it_it: Sveglia la tua casa
+    ru_ru: Пробудите свой дом
+    pl_pl: Obudź swój dom
+    pt_br: Desperte sua casa
+    sv_se: Väck ditt hem
+    uk_ua: Пробудьте свій дім
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/thumbnail.png
+  tips: {}
+  title:
+    en_us: Home Assistant
+  index: /
+  port_map: "8123"
