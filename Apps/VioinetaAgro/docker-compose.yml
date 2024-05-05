@@ -5,7 +5,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: linuxserver/homeassistant:2023.11.3
+    image: vioneta/vionetaos:latest
     deploy:
       resources:
         reservations:
@@ -37,6 +37,7 @@ services:
             en_us: Vioneta Agro config directory.
             zh_cn: Vioneta Agro配置目录
     container_name: vionetagro
+x-casaos:
   architectures:
     - amd64
     - arm64
@@ -44,8 +45,8 @@ services:
   author: Vioneta Team
   category: Agriculture
   description:
-    en_us: Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.
-  developer: Home Assistant
+    en_us: Smart precision agriculture platform that put local controll and dataprivacy at first
+  developer: Vioneta Agro
   icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-1.jpg
@@ -54,21 +55,9 @@ services:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-4.jpg
   tagline:
     en_us: Awaken your home
-    zh_cn: 唤醒你的家
-    ar_sa: انعاش منزلك
-    de_de: Wecken Sie Ihr Zuhause
-    es_es: Despierta tu hogar
-    fr_fr: Réveillez votre maison
-    hu_hu: Ébreszd fel otthonod
-    it_it: Sveglia la tua casa
-    ru_ru: Пробудите свой дом
-    pl_pl: Obudź swój dom
-    pt_br: Desperte sua casa
-    sv_se: Väck ditt hem
-    uk_ua: Пробудьте свій дім
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/thumbnail.png
   tips: {}
   title:
-    en_us: Home Assistant
+    en_us: Vioneta Agro
   index: /
   port_map: "8123"
