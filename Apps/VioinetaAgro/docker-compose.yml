@@ -55,7 +55,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-4.jpg
   tagline:
     en_us: Awaken your home
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/thumbnail.png
+  thumbnail: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VioinetaAgro/thumbnail.png
   tips: {}
   title:
     en_us: Vioneta Agro
