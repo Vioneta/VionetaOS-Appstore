@@ -1,0 +1,20 @@
+[
+  {
+    "appid": "homeassistant"
+  },
+  {
+    "appid": "grafana"
+  },
+  {
+    "appid": "node-red"
+  },
+  {
+    "appid": "nextcloud"
+  },
+  {
+    "appid": "syncthing"
+  },
+  {
+    "appid": "Snapdrop"
+  }
+]
