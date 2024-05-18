@@ -33,7 +33,7 @@ x-casaos:
     - amd64
     - arm64
   main: grafana
-  author: CasaOS Team
+  author: Vioneta Team
   category: Network
   description:
     en_us: |

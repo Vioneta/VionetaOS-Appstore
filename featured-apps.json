@@ -3,18 +3,12 @@
         "name": "vionetagro",
         "editor": "Vioneta Team",
         "date": "1640829941",
-        "reason": "Everyone's love"
+        "reason": "Revolution in Agriculture"
     },
     {
-        "name": "jellyfin",
-        "editor": "Vioneta Team",
-        "date": "1640830518",
-        "reason": "Open source and free, that's the spirit!"
-    },
-    {
-        "name": "nextcloud",
+        "name": "grafana",
         "editor": "Vioneta Team",
         "date": "1640830720",
-        "reason": "Public Cloud Walk Away~"
+        "reason": "Advanced analytics made easy"
     }
 ]

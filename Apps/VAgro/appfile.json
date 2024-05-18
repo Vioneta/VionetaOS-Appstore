@@ -1,6 +1,6 @@
 {
     "version": "2.0",
-    "title": "Vioneta Agro",
+    "title": "VAgro",
     "name": "vionetagro",
     "icon": "https://www.vioneta.com/images/logo.png",
     "tagline": "Smart Agriculture Platform",
@@ -16,7 +16,7 @@
         "Agriculture"
     ],
     "developer": {
-        "name": "Vioneta",
+        "name": "Vioneta Team",
         "website": "https://www.vioneta.com/",
         "donate_text": "", 
         "donate_link": ""
@@ -30,7 +30,7 @@
     "support": "https://discord.gg/DCFbR7mq9v",
     "website": "https://www.vioneta.com",
     "container": {
-        "image": "vioneta/vionetaos:latest",
+        "image": "ghcr.io/vioneta/generic-x86-64-vionetaos:latest",
         "shell": "bash",
         "privileged": false,
         "network_model": "host",

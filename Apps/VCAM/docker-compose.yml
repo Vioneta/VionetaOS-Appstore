@@ -1,0 +1,120 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    container_name: redis-instance
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+  mongo:
+    image: mongo:latest
+    container_name: mongo-instance
+    restart: unless-stopped
+    ports:
+      - '27017:27017'
+  mngr:
+    image: gokalpgoren/mngr:v1.0.3-amd64
+    container_name: mngr-instance
+    restart: unless-stopped
+    network_mode: host
+    depends_on:
+      - redis
+      - mongo
+    environment:
+      - TZ=Asia/Colombo
+      - REDIS_HOST=127.0.0.1
+      - REDIS_PORT=6379
+      - WEBSERVER_PORT=8072
+      - MONGODB_CS=mongodb://localhost:27017
+      - SENSE_AI_IMAGE=2
+      - ROOT_DIR_PATHS=/vioneta-nvr
+      - SNAPSHOT_PROC_COUNT=4
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /vioneta-nvr:/vioneta-nvr
+  ffmpeg_service:
+    image: gokalpgoren/ffmpeg_service:v1.0.3-amd64
+    container_name: ffmpeg_service-instance
+    restart: unless-stopped
+    network_mode: host
+    depends_on:
+      - redis
+      - mngr
+    environment:
+      - TZ=Asia/Colombo
+      - REDIS_HOST=127.0.0.1
+      - REDIS_PORT=6379
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /vioneta-nvr:/vioneta-nvr
+  snapshot_service:
+    image: gokalpgoren/snapshot_service:v1.0.3-amd64
+    container_name: snapshot_service-instance
+    restart: unless-stopped
+    network_mode: host
+    depends_on:
+      - redis
+      - ffmpeg_service
+    environment:
+      - TZ=Asia/Colombo
+      - REDIS_HOST=127.0.0.1
+      - REDIS_PORT=6379
+  senseai_service:
+    image: gokalpgoren/senseai_service:v1.0.3-amd64
+    container_name: senseai_service-instance
+    restart: unless-stopped
+    network_mode: host
+    depends_on:
+      - redis
+      - ffmpeg_service
+      - snapshot_service
+      - smcp
+    environment:
+      - TZ=Asia/Colombo
+      - REDIS_HOST=127.0.0.1
+      - REDIS_PORT=6379
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /vioneta-nvr:/vioneta-nvr
+  smcp:
+    image: gokalpgoren/smcp:v1.0.3-amd64
+    container_name: smcp-instance
+    restart: unless-stopped
+    network_mode: host
+    depends_on:
+      - redis
+      - mongo
+      - mngr
+    environment:
+      - TZ=Asia/Colombo
+      - REDIS_HOST=127.0.0.1
+      - REDIS_PORT=6379
+    volumes:
+      - /vioneta-nvr:/vioneta-nvr
+  webapp:
+    image: gokalpgoren/webapp:v1.0.3-amd64
+    container_name: webapp-instance
+    restart: unless-stopped
+    depends_on:
+      - mngr
+    environment:
+      - TZ=Asia/Colombo
+      - REDIS_HOST=127.0.0.1
+      - REDIS_PORT=6379
+    ports:
+      - '8080:80'

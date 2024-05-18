@@ -1,20 +1,11 @@
 [
   {
-    "appid": "homeassistant"
-  },
-  {
-    "appid": "grafana"
-  },
-  {
     "appid": "vionetagro"
   },
   {
-    "appid": "nextcloud"
+    "appid": "vionetaautomation"
   },
   {
-    "appid": "syncthing"
-  },
-  {
-    "appid": "Snapdrop"
+    "appid": "grafana"
   }
 ]
