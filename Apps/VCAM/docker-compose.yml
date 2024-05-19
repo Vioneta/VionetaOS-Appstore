@@ -11,7 +11,7 @@ x-casaos:
   icon: "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/icon.png"
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/screenshot-1.png
-  main: webapp
+  main: vcam
   port_map: "8234"
   scheme: http
   tagline:
@@ -23,6 +23,7 @@ x-casaos:
   title:
     en_us: VCam
 
+name: vcam
 services:
   redis:
     image: redis
