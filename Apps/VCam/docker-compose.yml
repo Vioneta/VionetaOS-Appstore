@@ -123,7 +123,7 @@ x-casaos:
   architectures:
     - amd64
     - arm64
-  main: vcam
+  main: webapp
   author: Vioneta Team
   category: Agriculture
   description:
