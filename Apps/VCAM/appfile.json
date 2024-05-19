@@ -1,0 +1,32 @@
+{
+    "version": "2.0",
+    "title": "VCam",
+    "name": "vcam",
+    "icon": "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/icon.png",
+    "tagline": "Ai Driven NVR System",
+    "overview": "Third Eye for your Farm",
+    "thumbnail": "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/thumbnail.png",
+    "screenshots": [
+        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-1.jpg",
+        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-2.jpg",
+        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-3.jpg",
+        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-4.jpg"
+    ],
+    "category": [
+        "Agriculture"
+    ],
+    "developer": {
+        "name": "Vioneta Team",
+        "website": "https://www.vioneta.com/",
+        "donate_text": "", 
+        "donate_link": ""
+    },
+    "adaptor": {
+        "name": "Vioneta Team",
+        "website": "https://www.vioneta.com",
+        "donate_text": "", 
+        "donate_link": ""
+    },
+    "support": "https://discord.gg/DCFbR7mq9v",
+    "website": "https://www.vioneta.com"
+}

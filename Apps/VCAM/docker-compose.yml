@@ -1,4 +1,28 @@
 version: '3'
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  author: Vioneta Team
+  category: Agriculture
+  description:
+    en_us: NVR System with ai capabilities Monitoring for your Farm
+  developer: Xhofe
+  icon: "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/icon.png"
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/screenshot-1.png
+  main: webapp
+  port_map: "8234"
+  scheme: http
+  tagline:
+    en_us: Third Eye for your Farm
+  thumbnail: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/thumbnail.png
+  # tips:
+  #   before_install:
+  #     en_us: After installation, please check the initial password in the container log (Settings - TopRight - Terminal and Logs - Logs).
+  title:
+    en_us: VCam
+
 services:
   redis:
     image: redis
@@ -117,4 +141,5 @@ services:
       - REDIS_HOST=127.0.0.1
       - REDIS_PORT=6379
     ports:
-      - '8080:80'
+      - '8080:8234'
+  
