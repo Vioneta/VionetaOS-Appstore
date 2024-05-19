@@ -5,7 +5,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: vioneta/vionetaos:latest
+    image: ghcr.io/vioneta/generic-x86-64-vionetaos:latest
     deploy:
       resources:
         reservations:
@@ -43,7 +43,7 @@ x-casaos:
   description:
     en_us: Smart precision agriculture platform that put local controll and dataprivacy at first
   developer: Vioneta Agro
-  icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VioinetaAgro/icon.png
+  icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-1.jpg
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-2.jpg
@@ -51,7 +51,7 @@ x-casaos:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-4.jpg
   tagline:
     en_us: Smart Agriculture Platform
-  thumbnail: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VioinetaAgro/thumbnail.png
+  thumbnail: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/thumbnail.png
   tips: {}
   title:
     en_us: Vioneta Agro

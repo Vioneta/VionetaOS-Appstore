@@ -1,28 +1,3 @@
-version: '3'
-x-casaos:
-  architectures:
-    - amd64
-    - arm64
-  author: Vioneta Team
-  category: Agriculture
-  description:
-    en_us: NVR System with ai capabilities Monitoring for your Farm
-  developer: Xhofe
-  icon: "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/icon.png"
-  screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Alist/screenshot-1.png
-  main: vcam
-  port_map: "8234"
-  scheme: http
-  tagline:
-    en_us: Third Eye for your Farm
-  thumbnail: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/thumbnail.png
-  # tips:
-  #   before_install:
-  #     en_us: After installation, please check the initial password in the container log (Settings - TopRight - Terminal and Logs - Logs).
-  title:
-    en_us: VCam
-
 name: vcam
 services:
   redis:
@@ -144,3 +119,27 @@ services:
     ports:
       - '8080:8234'
   
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: vcam
+  author: Vioneta Team
+  category: Agriculture
+  description:
+    en_us: Nvr system with Ai capabilities to monitor your farm
+  developer: Vioneta Agro
+  icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/icon.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-1.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-2.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-3.jpg
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-4.jpg
+  tagline:
+    en_us: Third Eye for your farm
+  thumbnail: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/thumbnail.png
+  tips: {}
+  title:
+    en_us: VCam
+  index: /
+  port_map: "8234"
