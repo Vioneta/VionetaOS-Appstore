@@ -1,7 +1,7 @@
-name: frigate
+name: vcam
 services:
-  frigate:
-    container_name: frigate
+  vcam:
+    container_name: vcam
     entrypoint: >
       bash -c '
         if [ ! -f "/config/config.yml" ]; then
@@ -98,13 +98,11 @@ x-casaos:
     - amd64
     - arm64
     - arm
-  author: mr-manuel
-  category: Surveillance
+  author: Vioneta Team
+  category: Agriculture
   description:
     en_us: |
-      Use of a Google Coral Accelerator is optional, but highly recommended. The Coral will outperform even the best CPUs and can process 100+ FPS with very little overhead.
-
-      * Tight integration with Home Assistant via a custom component
+      * Tight integration with Vioneta Agro via a plugin
       * Designed to minimize resource use and maximize performance by only looking for objects when and where it is necessary
       * Leverages multiprocessing heavily with an emphasis on realtime over processing every frame
       * Uses a very low overhead motion detection to determine where to run object detection
@@ -115,13 +113,12 @@ x-casaos:
       * Re-streaming via RTSP to reduce the number of connections to your camera
       * WebRTC & MSE support for low-latency live view
 
-      Visit [Frigate](https://frigate.video/) for more details. Check the [documentation](https://docs.frigate.video/) for further settings.
-  developer: Blake Blackshear
-  icon: https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/icon.png
+  developer: Vioneta Team
+  icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/icon.png
   index: /
-  main: frigate
+  main: vcam
   port_map: "5000"
-  project_url: https://github.com/mr-manuel/CasaOS-HomeAutomation-AppStore
+  project_url: https://github.com/Vioneta/Vioneta-AppStore
   screenshot_link:
     - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-1.png
     - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-2.png
@@ -130,16 +127,16 @@ x-casaos:
     - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-5.png
     - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-6.png
     - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-7.png
-  store_app_id: frigate
+  store_app_id: vcam
   tagline:
     en_us: |
-      A complete and local NVR designed for Home Assistant with AI object detection. Uses OpenCV and Tensorflow to perform realtime object detection locally for IP cameras.
+      A complete and local NVR designed for Agriculture with AI object detection. Uses OpenCV and Tensorflow to perform realtime object detection locally for IP cameras.
   thumbnail: https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/icon.png
   tips:
     before_install:
       en_us: |
-        Frigate will use ports `5000/tcp`, `8554/tcp`, `8555/tcp` and `8555/udp`. After installing further setup is needed.
+        vcam will use ports `5000/tcp`, `8554/tcp`, `8555/tcp` and `8555/udp`. After installing further setup is needed.
 
-        [Website](https://frigate.video) &bull; [Documentation](https://docs.frigate.video/guides/getting_started)
+        [Website](https://vioneta.com) &bull; [Documentation](https://docs.vioneta.com/guides/getting_started)
   title:
-    en_us: Frigate NVR
+    en_us: VCam 
