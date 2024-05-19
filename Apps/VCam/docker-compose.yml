@@ -1,7 +1,7 @@
 name: vcam
 services:
   redis:
-    image: redis
+    image: redis:latest
     container_name: redis-instance
     restart: unless-stopped
     ports:
