@@ -40,13 +40,14 @@ x-casaos:
   developer: vioneta
   icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VInsight/icon.png
   screenshot_link:
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Grafana/screenshot-1.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Grafana/screenshot-2.png
-    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Grafana/screenshot-3.png
+    - https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VInsight/screenshot-1.png
+    - https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VInsight/screenshot-2.png
+    - https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VInsight/screenshot-3.png
+    - https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VInsight/screenshot-4.png
   tagline:
     en_us: |
       VInsight is a complete observability stack that allows you to monitor and analyze metrics, logs and traces. It allows you to query, visualize, alert on and understand your data no matter where it is stored.
-  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Grafana/thumbnail.png
+  thumbnail: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VInsight/thumbnail.png
   tips:
     before_install:
       en_us: |

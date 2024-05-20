@@ -7,10 +7,10 @@
     "overview": "Smart precision agriculture platform that put local controll and dataprivacy at first",
     "thumbnail": "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/thumbnail.png",
     "screenshots": [
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-1.jpg",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-2.jpg",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-3.jpg",
-        "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/HomeAssistant/screenshot-4.jpg"
+        "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-1.png",
+        "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-2.png",
+        "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-3.png",
+        "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-4.png"
     ],
     "category": [
         "Agriculture"
