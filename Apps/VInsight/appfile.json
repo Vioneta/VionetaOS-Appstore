@@ -30,7 +30,7 @@
     "support": "https://discord.gg/DCFbR7mq9v",
     "website": "https://www.vioneta.com",
 	"container": {
-		"image": "grafana/grafana:8.4.5",
+		"image": "vioneta/vinsight:dev",
 		"shell": "sh",
 		"privileged": false,
 		"network_model": "bridge",

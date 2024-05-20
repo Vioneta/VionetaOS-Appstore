@@ -1,7 +1,7 @@
 name: vinsight
 services:
   vinsight:
-    image: grafana/grafana:10.2.2
+    image: vioneta/vinsight:dev
     deploy:
       resources:
         reservations:
