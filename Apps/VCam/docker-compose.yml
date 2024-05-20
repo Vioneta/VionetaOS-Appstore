@@ -32,7 +32,7 @@ services:
         fi
         /init'
     privileged: true # this may not be necessary for all setups
-    image: ghcr.io/blakeblackshear/frigate:stable
+    image: vioneta/vcam:latest
     labels:
       icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/icon.png
     network_mode: bridge
