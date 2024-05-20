@@ -120,18 +120,15 @@ x-casaos:
   port_map: "5000"
   project_url: https://github.com/Vioneta/Vioneta-AppStore
   screenshot_link:
-    - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-1.png
-    - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-2.png
-    - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-3.png
-    - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-4.png
-    - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-5.png
-    - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-6.png
-    - https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/screenshot-7.png
+    - https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/screenshot-1.png
+    - https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/screenshot-2.png
+    - https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/screenshot-3.png
+    - https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/screenshot-4.png
   store_app_id: vcam
   tagline:
     en_us: |
       A complete and local NVR designed for Agriculture with AI object detection. Uses OpenCV and Tensorflow to perform realtime object detection locally for IP cameras.
-  thumbnail: https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/Frigate/icon.png
+  thumbnail: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/thumbnail.png
   tips:
     before_install:
       en_us: |
