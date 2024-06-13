@@ -42,7 +42,7 @@ services:
       - type: bind
         source: /DATA/AppData/mosquitto/data
         target: /mosquitto/data
-    x-casaos:
+    x-vionetaos:
       ports:
         - container: "1883"
           description:
@@ -54,7 +54,7 @@ services:
         - container: /mosquitto/data
           description:
             en_us: Contains all data files.
-x-casaos:
+x-vionetaos:
   architectures:
     - amd64
     - arm64

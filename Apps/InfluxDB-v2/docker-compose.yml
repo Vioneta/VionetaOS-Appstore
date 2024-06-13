@@ -25,7 +25,7 @@ services:
       - type: bind
         source: /DATA/AppData/$AppID/data
         target: /var/lib/influxdb2
-    x-casaos:
+    x-vionetaos:
       ports:
         - container: "8092"
           description:
@@ -37,7 +37,7 @@ services:
         - container: /var/lib/influxdb2
           description:
             en_us: Contains all database files.
-x-casaos:
+x-vionetaos:
   architectures:
     - amd64
     - arm64

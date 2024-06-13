@@ -16,7 +16,7 @@ services:
       - type: bind
         source: /DATA/AppData/$AppID/data
         target: /var/lib/grafana
-    x-casaos:
+    x-vionetaos:
       ports:
         - container: "3000"
           description:
@@ -27,7 +27,7 @@ services:
             en_us: VInsight database and plugins directory.
 
     container_name: vinsight
-x-casaos:
+x-vionetaos:
   architectures:
     - amd64
     - arm64

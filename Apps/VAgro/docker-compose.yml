@@ -16,7 +16,7 @@ services:
       - type: bind
         source: /DATA/AppData/$AppID/config
         target: /config
-    x-casaos:
+    x-vionetaos:
       envs:
         - container: TZ
           description:
@@ -33,7 +33,7 @@ services:
           description:
             en_us: Vioneta Agro config directory.
     container_name: vionetagro
-x-casaos:
+x-vionetaos:
   architectures:
     - amd64
     - arm64
