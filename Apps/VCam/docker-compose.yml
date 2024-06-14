@@ -32,7 +32,7 @@ services:
         fi
         /init'
     privileged: true # this may not be necessary for all setups
-    image: vioneta/vcam:latest
+    image: ghcr.io/vioneta/vioneta-vcam:0.1.0-tensorrt-jp5
     labels:
       icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VCam/icon.png
     network_mode: bridge
@@ -57,9 +57,9 @@ services:
       retries: 3
     shm_size: "64mb" # update for your cameras based on calculation
     devices:
-      - /dev/bus/usb:/dev/bus/usb  # passes the USB Coral, needs to be modified for other versions
-      - /dev/apex_0:/dev/apex_0  # passes a PCIe Coral, follow driver instructions here https://coral.ai/docs/m2/get-started/#2a-on-linux
-      - /dev/dri/renderD128  # for intel hwaccel, needs to be updated for your hardware
+      - /dev/bus/usb:/dev/bus/usb # passes the USB Coral, needs to be modified for other versions
+      - /dev/apex_0:/dev/apex_0 # passes a PCIe Coral, follow driver instructions here https://coral.ai/docs/m2/get-started/#2a-on-linux
+      - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
     volumes:
       - type: bind
         source: /etc/localtime
@@ -71,10 +71,10 @@ services:
       - type: bind
         source: /DATA/AppData/$AppID/media
         target: /media/frigate
-#      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
-#        target: /tmp/cache
-#        tmpfs:
-#          size: 1G
+    #      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+    #        target: /tmp/cache
+    #        tmpfs:
+    #          size: 1G
     x-vionetaos:
       ports:
         - container: "5000"
@@ -136,4 +136,4 @@ x-vionetaos:
 
         [Website](https://vioneta.com) &bull; [Documentation](https://docs.vioneta.com/guides/getting_started)
   title:
-    en_us: VCam 
+    en_us: VCam
