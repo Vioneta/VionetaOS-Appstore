@@ -59,8 +59,8 @@ x-vionetaos:
     - amd64
     - arm64
     - arm
-  author: mr-manuel
-  category: Home Automation
+  author: Vioneta Team
+  category: Agriculture
   description:
     en_us: |
       Visit [Eclipse Mosquitto](https://mosquitto.org) for more details. Check the [documentation](https://mosquitto.org/documentation/) for further settings.
@@ -69,7 +69,7 @@ x-vionetaos:
   # index: "/"
   main: mosquitto
   # port_map: "1883"
-  project_url: https://github.com/mr-manuel/CasaOS-HomeAutomation-AppStore
+  project_url: https://github.com/Vioneta/VionetaOS-AppStore
   store_app_id: mosquitto
   tagline:
     en_us: |

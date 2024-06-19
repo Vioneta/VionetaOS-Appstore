@@ -20,13 +20,12 @@ services:
       - vinsight
 
   vinsight:
-    container_name: vcam
+    container_name: vinsight
     image: vioneta/vinsight:latest
     deploy:
       resources:
         reservations:
           memory: 256M
-    network_mode: bridge
     ports:
       - target: 8088
         published: "3003"
@@ -39,6 +38,7 @@ services:
       - /DATA/AppData/$AppID/config:/var/lib/superset
     networks:
       - vinsight
+
 networks:
   vinsight:
     name: vinsight
