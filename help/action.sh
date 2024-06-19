@@ -13,4 +13,4 @@ done
 obj=${obj%?}
 obj="${obj} }"
 data=$(echo "$obj" | jq .)
-echo "$data" > ./CasaOS-i18n/back-end/en_us.json
+echo "$data" > ./VionetaOS-i18n/back-end/en_us.json

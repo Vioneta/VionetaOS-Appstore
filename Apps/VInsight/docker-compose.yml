@@ -1,28 +1,28 @@
 name: vinsight
 services:
   vinsight:
-    image: vioneta/vinsight:dev
+    image: vioneta/vinsight:latest
     deploy:
       resources:
         reservations:
           memory: 64M
     network_mode: bridge
     ports:
-      - target: 3000
+      - target: 8088
         published: "3003"
         protocol: tcp
     restart: always
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/data
-        target: /var/lib/grafana
+        target: /var/lib/superset
     x-vionetaos:
       ports:
-        - container: "3000"
+        - container: "8088"
           description:
             en_us: ""
       volumes:
-        - container: /var/lib/grafana
+        - container: /var/lib/superset
           description:
             en_us: VInsight database and plugins directory.
 
