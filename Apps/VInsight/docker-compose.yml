@@ -40,11 +40,13 @@ services:
 networks:
   vinsight:
     name: vinsight
+
 x-vionetaos:
   architectures:
     - amd64
     - arm64
   main: vinsight
+  store_app_id: vinsight
   author: Vioneta Team
   category: Network
   description:
