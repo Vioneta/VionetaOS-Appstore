@@ -5,7 +5,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: ghcr.io/vioneta/generic-x86-64-vionetaos:latest
+    image: ghcr.io/vioneta/qemuarm-64-vionetaos:latest
     deploy:
       resources:
         reservations:
