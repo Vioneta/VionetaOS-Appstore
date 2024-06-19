@@ -1,32 +1,33 @@
 name: vinsight
 services:
+  pgdb:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: vinsight
+      POSTGRES_PASSWORD: vinsight
+      POSTGRES_USER: vinsight
+    volumes:
+      - /DATA/AppData/$AppID/metadata/database:/var/lib/postgresql/data
+  redis:
+    image: redis
+    restart: always
+    volumes:
+      - /DATA/AppData/$AppID/cache/database:/data
+
   vinsight:
     image: vioneta/vinsight:latest
     deploy:
       resources:
         reservations:
-          memory: 64M
+          memory: 256M
     network_mode: bridge
     ports:
       - target: 8088
         published: "3003"
         protocol: tcp
     restart: always
-    volumes:
-      - type: bind
-        source: /DATA/AppData/$AppID/data
-        target: /var/lib/superset
-    x-vionetaos:
-      ports:
-        - container: "8088"
-          description:
-            en_us: ""
-      volumes:
-        - container: /var/lib/superset
-          description:
-            en_us: VInsight database and plugins directory.
 
-    container_name: vinsight
 x-vionetaos:
   architectures:
     - amd64
