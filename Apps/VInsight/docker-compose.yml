@@ -1,20 +1,5 @@
 name: vinsight
 services:
-  pgdb:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_DB: vinsight
-      POSTGRES_PASSWORD: vinsight
-      POSTGRES_USER: vinsight
-    volumes:
-      - /DATA/AppData/$AppID/metadata/database:/var/lib/postgresql/data
-  redis:
-    image: redis
-    restart: always
-    volumes:
-      - /DATA/AppData/$AppID/cache/database:/data
-
   vinsight:
     image: vioneta/vinsight:latest
     deploy:
@@ -32,7 +17,29 @@ services:
       - pgdb
     volumes:
       - /DATA/AppData/$AppID/config:/var/lib/superset
-
+    networks:
+      - vinsight
+  pgdb:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: vinsight
+      POSTGRES_PASSWORD: vinsight
+      POSTGRES_USER: vinsight
+    volumes:
+      - /DATA/AppData/$AppID/metadata/database:/var/lib/postgresql/data
+    networks:
+      - vinsight
+  redis:
+    image: redis
+    restart: always
+    volumes:
+      - /DATA/AppData/$AppID/cache/database:/data
+    networks:
+      - vinsight
+networks:
+  vinsight:
+    name: vinsight
 x-vionetaos:
   architectures:
     - amd64
