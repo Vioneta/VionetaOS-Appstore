@@ -1,0 +1,229 @@
+name: VAssist
+services:
+  vassist:
+    # Name of the container
+    container_name: vassist
+    # Image to be used for the container
+    image: vioneta/ollama:r35.5.0
+    # Container restart policy
+    restart: unless-stopped
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/.ollama:/root/.ollama
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 11434 of the host to port 11434 of the container
+      - "11434:11434"
+    # Define the deployment settings
+    deploy:
+      # Specify resource reservations
+      resources:
+        reservations:
+          devices:
+            # Specify the device driver as NVIDIA
+            - driver: nvidia
+              # Allocate all available GPUs
+              count: all
+              capabilities:
+                # Define the required capabilities (gpu for GPU resources)
+                - gpu
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /root/.ollama
+          description:
+            en_us: "Container Path: /root/.ollama"
+      ports:
+        - container: "11434"
+          description:
+            en_us: "Container Port: 11434"
+
+  wakeword:
+    # Name of the container
+    container_name: wakeword
+    # Image to be used for the container
+    image: vioneta/wyoming-openwakeword:r35.5.0
+    # Container restart policy
+    restart: unless-stopped
+    environment:
+      OPENWAKEWORD_CUSTOM_MODEL_DIR: /share/openwakeword
+      OPENWAKEWORD_PRELOAD_MODEL: ok_nabu
+    # Volumes to be mounted to the container
+    volumes:
+      - /DATA/AppData/$AppID/openwakeword:/share/openwakeword
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    # Ports mapping between host and container
+    ports:
+      # Mapping port 11434 of the host to port 11434 of the container
+      - "10400:10400"
+    # Define the deployment settings
+    deploy:
+      # Specify resource reservations
+      resources:
+        reservations:
+          devices:
+            # Specify the device driver as NVIDIA
+            - driver: nvidia
+              # Allocate all available GPUs
+              count: all
+              capabilities:
+                # Define the required capabilities (gpu for GPU resources)
+                - gpu
+    x-casaos: # CasaOS specific configuration
+      volumes:
+        - container: /share/openwakeword
+          description:
+            en_us: "Container Path: /share/openwakeword"
+      ports:
+        - container: "10400"
+          description:
+            en_us: "Container Port: 10400"
+  ################################WHISPER#################################################################
+  whisper:
+    image: vioneta/wyoming-whisper:r35.5.0
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      WHISPER_MODEL: ""
+      WHISPER_BEAM: ""
+      WHISPER_LANG: ""
+    volumes:
+      - /DATA/AppData/$AppID/wyoming-whisper:/share/whisper
+      - /DATA/AppData/$AppID/wyoming-whisper/data:/data
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    ports:
+      - "10300:10300"
+    x-vionetaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: for UserID
+        - container: PGID
+          description:
+            en_us: for GroupID
+        - container: TZ
+          description:
+            en_us: specify a timezone to use, see this list.
+        - container: WHISPER_MODEL
+          description:
+            en_us: Whisper model that will be used for transcription. From tiny, base, small and medium, all with -int8 compressed variants
+        - container: WHISPER_BEAM
+          description:
+            en_us: Number of candidates to consider simultaneously during transcription.
+        - container: WHISPER_LANG
+          description:
+            en_us: Language that you will speak to the add-on.
+      volumes:
+        - container: /share/whisper
+          description:
+            en_us: "Container Path: /share/whisper"
+        - container: /data
+          description:
+            en_us: "Container Path: /data"
+      ports:
+        - container: "10300"
+          description:
+            en_us: "Container Port: 10300"
+    deploy:
+      # Specify resource reservations
+      resources:
+        reservations:
+          devices:
+            # Specify the device driver as NVIDIA
+            - driver: nvidia
+              # Allocate all available GPUs
+              count: all
+              capabilities:
+                # Define the required capabilities (gpu for GPU resources)
+                - gpu
+  #############################PIPER########################################################
+  piper:
+    image: vioneta/wyoming-piper:r35.5.0
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+      PIPER_VOICE: "en_US-lessac-high"
+      PIPER_LENGTH: ""
+      PIPER_NOISE: ""
+      PIPER_NOISEW: ""
+      PIPER_SPEAKER: ""
+      PIPER_PROCS: ""
+    volumes:
+      - /DATA/AppData/$AppID/wyoming-piper:/data/models/piper
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    ports:
+      # Mapping port 11434 of the host to port 11434 of the container
+      - "10200:10200"
+    x-vionetaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: for UserID
+        - container: PGID
+          description:
+            en_us: for GroupID
+        - container: TZ
+          description:
+            en_us: specify a timezone to use, see this list.
+        - container: PIPER_VOICE
+          description:
+            en_us: The Piper voice to use, in the format --
+        - container: PIPER_LENGTH
+          description:
+            en_us: Voice speaking rate, 1.0 is default with  1.0 being slower.
+        - container: PIPER_NOISE
+          description:
+            en_us: Controls the variability of the voice by adding noise. Values above 1 will start to degrade audio.
+        - container: PIPER_NOISEW
+          description:
+            en_us: Controls the variability of speaking cadence. Values above 1 produce extreme stutters and pauses.
+        - container: PIPER_SPEAKER
+          description:
+            en_us: Speaker number to use if the voice supports multiple speakers.
+        - container: PIPER_PROCS
+          description:
+            en_us: Number of Piper processes to run simultaneously.
+      volumes:
+        - container: /data/models/piper
+          description:
+            en_us: "Container Path: /data/models/piper"
+      ports:
+        - container: "10200"
+          description:
+            en_us: "Container Port: 10200"
+    deploy:
+      # Specify resource reservations
+      resources:
+        reservations:
+          devices:
+            # Specify the device driver as NVIDIA
+            - driver: nvidia
+              # Allocate all available GPUs
+              count: all
+              capabilities:
+                # Define the required capabilities (gpu for GPU resources)
+                - gpu
+x-vionetaos:
+  architectures:
+    - amd64
+    - arm64
+  main: vassist
+  description:
+    en_us: Utilizes cutting-edge large language models locally for natural language processing. This enables Vassist to understand and respond to complex farmer queries and commands efficiently.
+  tagline:
+    en_us: Interactive assistant for decision support.
+  developer: Vioneta Team
+  author: Vioneta Team
+  icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAssist/icon.png
+  # thumbnail: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/faster-whisper-logo.png
+  title:
+    en_us: VAssist
+  category: AI

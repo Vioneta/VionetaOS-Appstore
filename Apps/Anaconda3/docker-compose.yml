@@ -2,7 +2,7 @@ name: anaconda3
 services:
   anaconda3:
     container_name: anaconda3
-    image: continuumio/anaconda3:latest
+    image: vioneta/jupyterlab:r35.5.0
     network_mode: bridge
     restart: unless-stopped
     environment:
@@ -44,11 +44,9 @@ services:
         - container: /opt/notebooks
           description:
             en_us: Jupyter notebook directory
-            zh_cn: Jupyter
 x-vionetaos:
   main: anaconda3
   architectures:
-    - amd64
     - arm64
   author: Vioneta Team
   category: AI

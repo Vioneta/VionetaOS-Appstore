@@ -11,7 +11,7 @@
     "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Grafana/screenshot-2.png",
     "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Grafana/screenshot-3.png"
   ],
-  "category": ["Network"],
+  "category": ["Analytics"],
   "developer": {
     "name": "grafana",
     "website": "https://github.com/grafana/grafana",
