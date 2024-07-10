@@ -1,95 +1,93 @@
 {
-    "version": "2.0",
-    "title": "VAgro",
-    "name": "vionetagro",
-    "icon": "https://www.vioneta.com/images/logo.png",
-    "tagline": "Smart Agriculture Platform",
-    "overview": "Smart precision agriculture platform that put local controll and dataprivacy at first",
-    "thumbnail": "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/thumbnail.png",
-    "screenshots": [
-        "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-1.png",
-        "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-2.png",
-        "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-3.png",
-        "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-4.png"
-    ],
-    "category": [
-        "Agriculture"
-    ],
-    "developer": {
-        "name": "Vioneta Team",
-        "website": "https://www.vioneta.com/",
-        "donate_text": "", 
-        "donate_link": ""
-    },
-    "adaptor": {
-        "name": "Vioneta Team",
-        "website": "https://www.vioneta.com",
-        "donate_text": "", 
-        "donate_link": ""
-    },
-    "support": "https://discord.gg/DCFbR7mq9v",
+  "version": "2.0",
+  "title": "VAgro",
+  "name": "vionetagro",
+  "icon": "https://www.vioneta.com/images/logo.png",
+  "tagline": "Smart Agriculture Platform",
+  "overview": "Smart precision agriculture platform that put local controll and dataprivacy at first",
+  "thumbnail": "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/thumbnail.png",
+  "screenshots": [
+    "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-1.png",
+    "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-2.png",
+    "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-3.png",
+    "https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-4.png"
+  ],
+  "category": ["Agriculture"],
+  "developer": {
+    "name": "Vioneta Team",
+    "website": "https://www.vioneta.com/",
+    "donate_text": "",
+    "donate_link": ""
+  },
+  "adaptor": {
+    "name": "Vioneta Team",
     "website": "https://www.vioneta.com",
-    "container": {
-        "image": "ghcr.io/vioneta/generic-x86-64-vionetaos:latest",
-        "shell": "bash",
-        "privileged": false,
-        "network_model": "host",
-        "web_ui": {
-            "http": "8123",
-            "path": "/"
-        },
-        "envs": [
-            {
-                "key": "TZ",
-                "value": "$TZ",
-                "configurable": "no",
-                "description": "TimeZone"
-            },
-            {
-                "key": "PUID",
-                "value": "$PUID",
-                "configurable": "no",
-                "description": "Run Vioneta Agro as specified uid."
-            },
-            {
-                "key": "PGID",
-                "value": "$PGID",
-                "configurable": "no",
-                "description": "Run Vioneta Agro as specified gid."
-            }
-        ],
-        "ports": [],
-        "volumes": [
-            {
-                "container": "/config",
-                "host": "/DATA/AppData/$AppID/config",
-                "mode": "rw",
-                "allocation": "automatic",
-                "configurable": "no",
-                "description": "Vioneta Agro config directory."
-            }
-        ],
-        "devices": [],
-        "constraints": {
-            "min_memory": 256,
-            "min_storage": 1024
-        },
-        "restart_policy": "unless-stopped",
-        "sysctls": [],
-        "cap_add": [],
-        "labels": []
+    "donate_text": "",
+    "donate_link": ""
+  },
+  "support": "https://discord.gg/DCFbR7mq9v",
+  "website": "https://www.vioneta.com",
+  "container": {
+    "image": "vioneta/vionetaos:latest",
+    "shell": "bash",
+    "privileged": false,
+    "network_model": "host",
+    "web_ui": {
+      "http": "8123",
+      "path": "/"
     },
-    "abilities": {
-        "notification": false,
-        "widgets": false,
-        "authentication": false,
-        "search": false,
-        "upnp": false
+    "envs": [
+      {
+        "key": "TZ",
+        "value": "$TZ",
+        "configurable": "no",
+        "description": "TimeZone"
+      },
+      {
+        "key": "PUID",
+        "value": "$PUID",
+        "configurable": "no",
+        "description": "Run Vioneta Agro as specified uid."
+      },
+      {
+        "key": "PGID",
+        "value": "$PGID",
+        "configurable": "no",
+        "description": "Run Vioneta Agro as specified gid."
+      }
+    ],
+    "ports": [],
+    "volumes": [
+      {
+        "container": "/config",
+        "host": "/DATA/AppData/$AppID/config",
+        "mode": "rw",
+        "allocation": "automatic",
+        "configurable": "no",
+        "description": "Vioneta Agro config directory."
+      }
+    ],
+    "devices": [],
+    "constraints": {
+      "min_memory": 256,
+      "min_storage": 1024
     },
-    "tips": {},
-    "changelog":{
-        "latest_updates": "",
-        "url": ""
-    },
-    "latest_update_date": "1640591843"
+    "restart_policy": "unless-stopped",
+    "sysctls": [],
+    "cap_add": [],
+    "labels": []
+  },
+  "abilities": {
+    "notification": false,
+    "widgets": false,
+    "authentication": false,
+    "search": false,
+    "upnp": false
+  },
+  "tips": {},
+  "changelog": {
+    "latest_updates": "",
+    "url": ""
+  },
+  "latest_update_date": "1640591843"
 }

@@ -1,14 +1,14 @@
 [
-    {
-        "name": "vionetagro",
-        "editor": "Vioneta Team",
-        "date": "1640829941",
-        "reason": "Revolution in Agriculture"
-    },
-    {
-        "name": "vinsight",
-        "editor": "Vioneta Team",
-        "date": "1640830720",
-        "reason": "Advanced analytics made easy"
-    }
+  {
+    "name": "vionetagro",
+    "editor": "Vioneta Team",
+    "date": "1640829941",
+    "reason": "Revolution in Agriculture"
+  },
+  {
+    "name": "vinsight",
+    "editor": "Vioneta Team",
+    "date": "1640830720",
+    "reason": "Advanced analytics made easy"
+  }
 ]

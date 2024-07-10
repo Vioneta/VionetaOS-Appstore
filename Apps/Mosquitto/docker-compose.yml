@@ -60,7 +60,7 @@ x-vionetaos:
     - arm64
     - arm
   author: Vioneta Team
-  category: Agriculture
+  category: Network
   description:
     en_us: |
       Visit [Eclipse Mosquitto](https://mosquitto.org) for more details. Check the [documentation](https://mosquitto.org/documentation/) for further settings.

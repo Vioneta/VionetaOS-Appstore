@@ -5,7 +5,7 @@ services:
       PGID: $PGID
       PUID: $PUID
       TZ: $TZ
-    image: ghcr.io/vioneta/qemuarm-64-vionetaos:latest
+    image: vioneta/vionetaos:latest
     deploy:
       resources:
         reservations:
@@ -42,7 +42,7 @@ x-vionetaos:
   category: Agriculture
   description:
     en_us: Smart precision agriculture platform that put local controll and dataprivacy at first
-  developer: Vioneta Agro
+  developer: Vioneta Team
   icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/icon.png
   screenshot_link:
     - https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAgro/screenshot-1.png

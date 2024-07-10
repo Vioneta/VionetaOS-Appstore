@@ -1,0 +1,60 @@
+name: mongodb4
+services:
+  mongodb4:
+    image: mongo:4.4.22
+    restart: unless-stopped
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      TZ: $TZ
+    x-vionetaos:
+      envs:
+        - container: PUID
+          description:
+            en_us: for UserID
+        - container: PGID
+          description:
+            en_us: for GroupID
+        - container: TZ
+          description:
+            en_us: Specify a timezone to use.
+      volumes:
+        - container: /data/configdb
+          description:
+            en_us: MongoDB Config
+        - container: /data/db
+          description:
+            en_us: MongoDB Database file
+      ports:
+        - container: "27017"
+          description:
+            en_us: MongoDB Port
+    ports:
+      - target: 27017
+        published: "27017"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/mongodb4/data/configdb
+        target: /data/configdb
+      - type: bind
+        source: /DATA/AppData/mongodb4/data/db
+        target: /data/db
+    container_name: mongodb4
+x-vionetaos:
+  architectures:
+    - amd64
+    - arm64
+  main: mongodb4
+  description:
+    en_us: MongoDB is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemata. MongoDB is developed by MongoDB Inc., and is published under a combination of the Server Side Public License and the Apache License.
+  tagline:
+    en_us: A free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemata.
+  screenshot_link:
+  developer: MongoDB Inc.
+  author: Vioneta Team
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MongoDB4/icon.png
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/MongoDB4/icon.png
+  category: Database
+  title:
+    en_us: MongoDB 4

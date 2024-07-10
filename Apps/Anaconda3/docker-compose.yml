@@ -1,0 +1,75 @@
+name: anaconda3
+services:
+  anaconda3:
+    container_name: anaconda3
+    image: continuumio/anaconda3:latest
+    network_mode: bridge
+    restart: unless-stopped
+    environment:
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
+      - PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    ports:
+      - target: 8888
+        published: "8888"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/notebooks
+        target: /opt/notebooks
+    command:
+      - /bin/bash
+      - -c
+      - conda install -c conda-forge jupyterlab -y --quiet && jupyter lab
+        --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser
+        --allow-root
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/LisonEvf/CasaOS-AppStore@main/Apps/Anaconda3/icon.png
+    x-vionetaos:
+      envs:
+        - container: PATH
+          description:
+            en_us: ""
+        - container: LANG
+          description:
+            en_us: ""
+        - container: LC_ALL
+          description:
+            en_us: ""
+      ports:
+        - container: "8888"
+          description:
+            en_us: JupyterLab
+      volumes:
+        - container: /opt/notebooks
+          description:
+            en_us: Jupyter notebook directory
+            zh_cn: Jupyter
+x-vionetaos:
+  main: anaconda3
+  architectures:
+    - amd64
+    - arm64
+  author: Vioneta Team
+  category: AI
+  developer: Anaconda Foundation
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Anaconda3/icon.png
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Anaconda3/thumbnail.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Anaconda3/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Anaconda3/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Anaconda3/screenshot-3.png
+  scheme: http
+  hostname: ""
+  port_map: "8888"
+  index: /
+  description:
+    en_us: Your machine learning Env work with Jupyter Lab
+  tagline:
+    en_us: Your machine learning Env work with Jupyter Lab
+  tips:
+    en_us: Your machine learning Env work with Jupyter Lab
+    before_install:
+      en_us: After installation, please check the token in the container log (Settings - TopRight - Terminal and Logs - Logs).
+  title:
+    en_us: Anaconda3

@@ -1,9 +1,9 @@
 # https://github.com/IceWhaleTech/CasaOS-AppStore/blob/main/CONTRIBUTING.md
 
-name: influxdb-v2
+name: influxdb
 services:
-  influxdb-v2:
-    container_name: influxdb-v2
+  influxdb:
+    container_name: influxdb
     image: influxdb:2.7
     labels:
       icon: https://raw.githubusercontent.com/mr-manuel/CasaOS-HomeAutomation-AppStore/latest/Apps/InfluxDB-v2/icon.png
@@ -42,7 +42,7 @@ x-vionetaos:
     - amd64
     - arm64
     - arm
-  author: mr-manuel
+  author: Vioneta Team
   category: Database
   description:
     en_us: |

@@ -99,7 +99,7 @@ x-vionetaos:
     - arm64
     - arm
   author: Vioneta Team
-  category: Agriculture
+  category: AI
   description:
     en_us: |
       * Tight integration with Vioneta Agro via a plugin

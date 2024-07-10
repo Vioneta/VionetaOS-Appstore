@@ -10,11 +10,6 @@
     "description": "File and Data Backup Apps"
   },
   {
-    "name": "Chat",
-    "font": "chat-processing-outline",
-    "description": "Chat Apps"
-  },
-  {
     "name": "Cloud",
     "font": "cloud-outline",
     "description": "Public cloud alternatives or enhanced Apps"
@@ -60,9 +55,9 @@
     "description": "VPN Apps"
   },
   {
-    "name": "Utilities",
+    "name": "AI",
     "font": "toolbox-outline",
-    "description": "Utilities Apps"
+    "description": "AI Apps"
   },
   {
     "name": "Agriculture",
