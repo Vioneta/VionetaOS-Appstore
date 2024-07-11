@@ -4,8 +4,11 @@ services:
     container_name: vassist
     image: vioneta/ollama:r35.5.0
     restart: unless-stopped
+    environment:
+      - OLLAMA_MODELS=/data/models/ollama/models
+      - OLLAMA_LOGS=/data/logs/ollama.log
     volumes:
-      - /DATA/AppData/$AppID/.ollama:/root/.ollama
+      - /DATA/AppData/$AppID/ollama/data:/data
     ports:
       - "11434:11434"
     deploy:
@@ -21,9 +24,9 @@ services:
                 - gpu
     x-vionetaos: # CasaOS specific configuration
       volumes:
-        - container: /root/.ollama
+        - container: /data
           description:
-            en_us: "Container Path: /root/.ollama"
+            en_us: "Container Path: /data"
       ports:
         - container: "11434"
           description:
