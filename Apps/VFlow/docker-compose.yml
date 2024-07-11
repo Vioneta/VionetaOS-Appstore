@@ -31,8 +31,6 @@ x-vionetaos:
   architectures:
     - amd64
     - arm64
-    - s390x
-    - arm
   main: vflow
   author: Vioneta Team
   category: Agriculture
