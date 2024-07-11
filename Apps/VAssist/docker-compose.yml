@@ -228,3 +228,5 @@ x-vionetaos:
   title:
     en_us: VAssist
   category: AI
+  index: /
+  port_map: "11434"
