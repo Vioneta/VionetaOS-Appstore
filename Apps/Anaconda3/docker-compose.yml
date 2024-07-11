@@ -10,9 +10,10 @@ services:
       - JUPYTER_PORT=8888
       - JUPYTER_PASSWORD=password
       - JUPYTER_LOGS=/data/jupyter.log
+    command: start-notebook.py --NotebookApp.token='hello_jupyterlab_vioneta'
     ports:
       - target: 8888
-        published: "8888"
+        published: "8889"
         protocol: tcp
     volumes:
       - type: bind
@@ -63,6 +64,6 @@ x-vionetaos:
   tips:
     en_us: Your machine learning Env work with Jupyter Lab
     before_install:
-      en_us: After installation, please check the token in the container log (Settings - TopRight - Terminal and Logs - Logs).
+      en_us: After installation, jupyter lab token is  "hello_jupyterlab_vioneta". you can access jupterlab in http://{vionetaosip}:8889/lab?token=hello_jupyterlab_vioneta
   title:
     en_us: Anaconda3
