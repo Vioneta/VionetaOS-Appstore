@@ -7,6 +7,8 @@ services:
     environment:
       - OLLAMA_MODELS=/data/models
       - OLLAMA_LOGS=/data/ollama.log
+      - OLLAMA_HOST=0.0.0.0
+    command: /bin/bash -c "/bin/ollama serve"
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/ollama/data
