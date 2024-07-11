@@ -8,7 +8,7 @@ services:
     environment:
       - JUPYTER_ROOT=/data
       - JUPYTER_PORT=8888
-      - JUPYTER_PASSWORD=nvidia
+      - JUPYTER_PASSWORD=vioneta
       - JUPYTER_LOGS=/data/jupyter.log
     command: /bin/bash
     ports:
