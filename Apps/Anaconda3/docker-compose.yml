@@ -4,11 +4,11 @@ services:
     container_name: anaconda3
     image: vioneta/jupyterlab:r35.5.0
     network_mode: bridge
-    restart: unless-stopped
+    # restart: unless-stopped
     environment:
       - JUPYTER_ROOT=/data
       - JUPYTER_PORT=8888
-      - JUPYTER_PASSWORD=password
+      - JUPYTER_PASSWORD=nvidia
       - JUPYTER_LOGS=/data/jupyter.log
     ports:
       - target: 8888
