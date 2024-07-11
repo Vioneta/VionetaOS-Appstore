@@ -3,7 +3,7 @@ services:
   vassist:
     container_name: vassist
     image: vioneta/ollama:r35.5.0
-    restart: unless-stopped
+    # restart: unless-stopped
     environment:
       - OLLAMA_MODELS=/data/models
       - OLLAMA_LOGS=/data/ollama.log
