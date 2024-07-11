@@ -223,7 +223,7 @@ x-vionetaos:
     en_us: Interactive assistant for decision support.
   developer: Vioneta Team
   author: Vioneta Team
-  icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAssist/icon.png
+  icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VAssist/logo.png
   # thumbnail: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/faster-whisper-logo.png
   title:
     en_us: VAssist
