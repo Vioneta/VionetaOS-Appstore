@@ -6,23 +6,18 @@ services:
     network_mode: bridge
     restart: unless-stopped
     environment:
-      - LANG=C.UTF-8
-      - LC_ALL=C.UTF-8
-      - PATH=/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - JUPYTER_ROOT=/
+      - JUPYTER_PORT=8888
+      - JUPYTER_PASSWORD=password
+      - JUPYTER_LOGS=/dev/null
     ports:
       - target: 8888
         published: "8888"
         protocol: tcp
     volumes:
       - type: bind
-        source: /DATA/AppData/$AppID/notebooks
-        target: /opt/notebooks
-    command:
-      - /bin/bash
-      - -c
-      - conda install -c conda-forge jupyterlab -y --quiet && jupyter lab
-        --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser
-        --allow-root
+        source: /DATA/AppData/$AppID/data
+        target: /data
     labels:
       icon: https://cdn.jsdelivr.net/gh/LisonEvf/CasaOS-AppStore@main/Apps/Anaconda3/icon.png
     x-vionetaos:
@@ -41,7 +36,7 @@ services:
           description:
             en_us: JupyterLab
       volumes:
-        - container: /opt/notebooks
+        - container: /data
           description:
             en_us: Jupyter notebook directory
 x-vionetaos:
