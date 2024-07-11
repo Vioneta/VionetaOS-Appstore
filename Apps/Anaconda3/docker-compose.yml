@@ -6,9 +6,9 @@ services:
     network_mode: bridge
     restart: unless-stopped
     environment:
-      - JUPYTER_ROOT=/
+      - JUPYTER_ROOT=/data
       - JUPYTER_PORT=8888
-      # - JUPYTER_PASSWORD=password
+      - JUPYTER_PASSWORD=password
       - JUPYTER_LOGS=/data/logs/jupyter.log
     ports:
       - target: 8888

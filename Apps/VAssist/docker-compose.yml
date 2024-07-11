@@ -4,11 +4,13 @@ services:
     container_name: vassist
     image: vioneta/ollama:r35.5.0
     restart: unless-stopped
-    environment:
-      - OLLAMA_MODELS=/data/models/ollama/models
-      - OLLAMA_LOGS=/data/logs/ollama.log
+    # environment:
+    #   - OLLAMA_MODELS=/data/models/ollama/models
+    #   - OLLAMA_LOGS=/data/logs/ollama.log
     volumes:
-      - /DATA/AppData/$AppID/ollama/data:/data
+      - type: bind
+        source: /DATA/AppData/$AppID/ollama/data
+        target: /data
     ports:
       - "11434:11434"
     deploy:
@@ -44,7 +46,9 @@ services:
       OPENWAKEWORD_PRELOAD_MODEL: ok_nabu
     # Volumes to be mounted to the container
     volumes:
-      - /DATA/AppData/$AppID/openwakeword:/share/openwakeword
+      - type: bind
+        source: /DATA/AppData/$AppID/openwakeword/data
+        target: /share/openwakeword
     # Ports mapping between host and container
     ports:
       # Mapping port 11434 of the host to port 11434 of the container
@@ -83,8 +87,12 @@ services:
       WHISPER_BEAM: ""
       WHISPER_LANG: ""
     volumes:
-      - /DATA/AppData/$AppID/wyoming-whisper:/share/whisper
-      - /DATA/AppData/$AppID/wyoming-whisper/data:/data
+      - type: bind
+        source: /DATA/AppData/$AppID/wyoming-whisper/whisper
+        target: /share/whisper
+      - type: bind
+        source: /DATA/AppData/$AppID/wyoming-whisper/data
+        target: /data
     ports:
       - "10300:10300"
     x-vionetaos:
@@ -145,7 +153,9 @@ services:
       PIPER_SPEAKER: ""
       PIPER_PROCS: ""
     volumes:
-      - /DATA/AppData/$AppID/wyoming-piper:/data/models/piper
+      - type: bind
+        source: /DATA/AppData/$AppID/wyoming-piper/data
+        target: /data
     ports:
       # Mapping port 11434 of the host to port 11434 of the container
       - "10200:10200"
@@ -179,9 +189,9 @@ services:
           description:
             en_us: Number of Piper processes to run simultaneously.
       volumes:
-        - container: /data/models/piper
+        - container: /data
           description:
-            en_us: "Container Path: /data/models/piper"
+            en_us: "Container Path: /data"
       ports:
         - container: "10200"
           description:
