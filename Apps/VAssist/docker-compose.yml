@@ -4,13 +4,16 @@ services:
     container_name: vassist
     image: vioneta/ollama:r35.5.0
     restart: unless-stopped
-    # environment:
-    #   - OLLAMA_MODELS=/data/models/ollama/models
-    #   - OLLAMA_LOGS=/data/logs/ollama.log
+    environment:
+      - OLLAMA_MODELS=/data/models
+      - OLLAMA_LOGS=/data/ollama.log
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/ollama/data
         target: /data
+      - type: bind
+        source: /DATA/AppData/$AppID/ollama/data/models
+        target: /data/models
     ports:
       - "11434:11434"
     deploy:

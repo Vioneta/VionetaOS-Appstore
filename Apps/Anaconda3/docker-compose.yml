@@ -9,7 +9,7 @@ services:
       - JUPYTER_ROOT=/data
       - JUPYTER_PORT=8888
       - JUPYTER_PASSWORD=password
-      - JUPYTER_LOGS=/data/logs/jupyter.log
+      - JUPYTER_LOGS=/data/jupyter.log
     ports:
       - target: 8888
         published: "8888"
