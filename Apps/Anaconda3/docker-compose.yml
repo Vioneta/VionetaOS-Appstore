@@ -64,6 +64,6 @@ x-vionetaos:
   tips:
     en_us: Your machine learning Env work with Jupyter Lab
     before_install:
-      en_us: After installation, please check the token in the container log (Settings - TopRight - Terminal and Logs - Logs).
+      en_us: default password for the juperlab login is nvidia.
   title:
     en_us: Anaconda3

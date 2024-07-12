@@ -51,7 +51,10 @@ x-vionetaos:
   tagline:
     en_us: Low-code programming for event-driven applications
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/thumbnail.png
-  tips: {}
+    tips:
+    en_us: Your low code rule engine.Make automation building easy.
+    before_install:
+      en_us: before install vflow app you have to go to the file explorer and create 'vflow' folder inside 'AppData' and inside it create 'data folder'
   title:
     en_us: VFlow
   index: /
