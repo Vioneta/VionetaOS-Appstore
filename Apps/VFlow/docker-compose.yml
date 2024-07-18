@@ -13,25 +13,26 @@ services:
         protocol: tcp
     restart: always
     volumes:
-      - data:/data
+      - data_nodered:/data
 volumes:
-  data:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /DATA/AppData/$AppID/data
-  # x-vionetaos:
-  #   ports:
-  #     - container: "1880"
-  #       description:
-  #         en_us: ""
+  data_nodered:
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   o: bind
+    #   device: /DATA/AppData/$AppID/data
+# x-vionetaos:
+#     ports:
+#       - container: "1880"
+#         description:
+#           en_us: ""
 
-  #   volumes:
-  #     - container: /data
-  #       description:
-  #         en_us: ""
-  # container_name: vflow
+#     volumes:
+#       - container: /data
+#         description:
+#           en_us: ""
+#     container_name: vflow
+
 x-vionetaos:
   architectures:
     - amd64
