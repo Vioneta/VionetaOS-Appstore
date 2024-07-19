@@ -80,6 +80,46 @@ services:
         - container: "10400"
           description:
             en_us: "Container Port: 10400"
+
+  ################RemoteMicroPhone ############################################################################
+  remote-microphone:
+    container_name: remote-microphone
+    image: vioneta/wyoming-assist-microphone:r35.5.0
+    restart: unless-stopped
+    ports:
+      - "10700:10700/tcp"
+    devices:
+      - /dev/snd:/dev/snd
+      - /dev/bus/usb
+    volumes:
+      - /DATA/AppData/$AppID/wyoming-microphone/data:/share
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      SATELLITE_AUDIO_DEVICE: "plughw:CARD=S330,DEV=0"
+      SATELLITE_SND_VOLUME_MULTIPLIER: 0.3
+      WAKEWORD_NAME: "ok_nabu"
+      ASSIST_PIPELINE_NAME: "Vioneta Agro"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            # Specify the device driver as NVIDIA
+            - driver: nvidia
+              # Allocate all available GPUs
+              count: all
+              capabilities:
+                # Define the required capabilities (gpu for GPU resources)
+                - gpu
+    x-vionetaos: # CasaOS specific configuration
+      volumes:
+        - container: /share
+          description:
+            en_us: "Container Path: /share"
+      ports:
+        - container: "10700"
+          description:
+            en_us: "Container Port: 10700"
   ################################WHISPER#################################################################
   whisper:
     image: vioneta/wyoming-whisper:r35.5.0
