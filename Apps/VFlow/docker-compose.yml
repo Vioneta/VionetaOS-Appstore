@@ -13,9 +13,11 @@ services:
         protocol: tcp
     restart: always
     volumes:
-      - data_nodered:/data
-volumes:
-  data_nodered:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /data
+# volumes:
+#   data_nodered:
     # driver: local
     # driver_opts:
     #   type: none
