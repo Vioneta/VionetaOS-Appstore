@@ -16,48 +16,37 @@ services:
       - type: bind
         source: /DATA/AppData/$AppID/data
         target: /data
-# volumes:
-#   data_nodered:
-    # driver: local
-    # driver_opts:
-    #   type: none
-    #   o: bind
-    #   device: /DATA/AppData/$AppID/data
     x-vionetaos:
-        ports:
-          - container: "1880"
-            description:
-              en_us: ""
+      ports:
+        - container: "1880"
+          description:
+            en_us: ""
 
-        volumes:
-          - container: /data
-            description:
-              en_us: ""
-        container_name: vflow
-
+      volumes:
+        - container: /data
+          description:
+            en_us: ""
+    container_name: vflow
 x-vionetaos:
   architectures:
     - amd64
     - arm64
   main: vflow
   author: Vioneta Team
-  category: Agriculture
+  category: Developer
   description:
     en_us: VFlow is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.  It provides a browser-based editor that makes it easy to wire together flows using the wide range of nodes in the palette that can be deployed to its runtime in a single-click.
-
-  developer: Vioneta Team
+  developer: Node-RED
   icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/VFlow/icon.png
   screenshot_link:
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-1.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-2.png
     - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/screenshot-3.png
+  store_app_id: vflow
   tagline:
     en_us: Low-code programming for event-driven applications
   thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Node-RED/thumbnail.png
-    tips:
-    en_us: Your low code rule engine.Make automation building easy.
-    before_install:
-      en_us: before install vflow app you have to go to the file explorer and create 'vflow' folder inside 'AppData' and inside it create 'data folder'
+  tips: {}
   title:
     en_us: VFlow
   index: /
