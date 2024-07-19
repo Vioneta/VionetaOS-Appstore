@@ -16,11 +16,11 @@ services:
       - data_nodered:/data
 volumes:
   data_nodered:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: /DATA/AppData/$AppID/data
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   o: bind
+    #   device: /DATA/AppData/$AppID/data
     x-vionetaos:
         ports:
           - container: "1880"
