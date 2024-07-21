@@ -90,7 +90,7 @@ services:
       - "10700:10700/tcp"
     devices:
       - /dev/snd:/dev/snd
-      - /dev/bus/usb
+      - /dev/bus/usb:/dev/bus/usb
     volumes:
       - /DATA/AppData/$AppID/wyoming-microphone/data:/share
       - /etc/localtime:/etc/localtime:ro
@@ -128,9 +128,9 @@ services:
       PUID: $PUID
       PGID: $PGID
       TZ: $TZ
-      WHISPER_MODEL: ""
-      WHISPER_BEAM: ""
-      WHISPER_LANG: ""
+      # WHISPER_MODEL: ""
+      # WHISPER_BEAM: ""
+      # WHISPER_LANG: ""
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/wyoming-whisper/whisper
@@ -151,15 +151,15 @@ services:
         - container: TZ
           description:
             en_us: specify a timezone to use, see this list.
-        - container: WHISPER_MODEL
-          description:
-            en_us: Whisper model that will be used for transcription. From tiny, base, small and medium, all with -int8 compressed variants
-        - container: WHISPER_BEAM
-          description:
-            en_us: Number of candidates to consider simultaneously during transcription.
-        - container: WHISPER_LANG
-          description:
-            en_us: Language that you will speak to the add-on.
+        # - container: WHISPER_MODEL
+        #   description:
+        #     en_us: Whisper model that will be used for transcription. From tiny, base, small and medium, all with -int8 compressed variants
+        # - container: WHISPER_BEAM
+        #   description:
+        #     en_us: Number of candidates to consider simultaneously during transcription.
+        # - container: WHISPER_LANG
+        #   description:
+        #     en_us: Language that you will speak to the add-on.
       volumes:
         - container: /share/whisper
           description:
@@ -192,11 +192,11 @@ services:
       PGID: $PGID
       TZ: $TZ
       PIPER_VOICE: "en_US-lessac-high"
-      PIPER_LENGTH: ""
-      PIPER_NOISE: ""
-      PIPER_NOISEW: ""
-      PIPER_SPEAKER: ""
-      PIPER_PROCS: ""
+      # PIPER_LENGTH: ""
+      # PIPER_NOISE: ""
+      # PIPER_NOISEW: ""
+      # PIPER_SPEAKER: ""
+      # PIPER_PROCS: ""
     volumes:
       - type: bind
         source: /DATA/AppData/$AppID/wyoming-piper/data
@@ -218,21 +218,21 @@ services:
         - container: PIPER_VOICE
           description:
             en_us: The Piper voice to use, in the format --
-        - container: PIPER_LENGTH
-          description:
-            en_us: Voice speaking rate, 1.0 is default with  1.0 being slower.
-        - container: PIPER_NOISE
-          description:
-            en_us: Controls the variability of the voice by adding noise. Values above 1 will start to degrade audio.
-        - container: PIPER_NOISEW
-          description:
-            en_us: Controls the variability of speaking cadence. Values above 1 produce extreme stutters and pauses.
-        - container: PIPER_SPEAKER
-          description:
-            en_us: Speaker number to use if the voice supports multiple speakers.
-        - container: PIPER_PROCS
-          description:
-            en_us: Number of Piper processes to run simultaneously.
+        # - container: PIPER_LENGTH
+        #   description:
+        #     en_us: Voice speaking rate, 1.0 is default with  1.0 being slower.
+        # - container: PIPER_NOISE
+        #   description:
+        #     en_us: Controls the variability of the voice by adding noise. Values above 1 will start to degrade audio.
+        # - container: PIPER_NOISEW
+        #   description:
+        #     en_us: Controls the variability of speaking cadence. Values above 1 produce extreme stutters and pauses.
+        # - container: PIPER_SPEAKER
+        #   description:
+        #     en_us: Speaker number to use if the voice supports multiple speakers.
+        # - container: PIPER_PROCS
+        #   description:
+        #     en_us: Number of Piper processes to run simultaneously.
       volumes:
         - container: /data
           description:
