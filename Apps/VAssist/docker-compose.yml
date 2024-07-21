@@ -90,7 +90,7 @@ services:
       - "10700:10700/tcp"
     devices:
       - /dev/snd:/dev/snd
-      - /dev/bus/usb:/dev/bus/usb
+      - /dev/bus/usb
     volumes:
       - /DATA/AppData/$AppID/wyoming-microphone/data:/share
       - /etc/localtime:/etc/localtime:ro
