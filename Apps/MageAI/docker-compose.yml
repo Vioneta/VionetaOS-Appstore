@@ -1,4 +1,4 @@
-name: Mageai
+name: mageai
 services:
   mageai:
     container_name: mageai
@@ -34,11 +34,11 @@ services:
       ports:
         - container: "6789"
           description:
-            en_us: MageAI
+            en_us: mageai
       volumes:
         - container: /home/src/
           description:
-            en_us: MageAI notebook directory
+            en_us: mageai notebook directory
 x-vionetaos:
   main: mageai
   architectures:
@@ -65,4 +65,4 @@ x-vionetaos:
     # before_install:
     #   en_us: default password for the juperlab login is nvidia.
   title:
-    en_us: Mageai
+    en_us: MageAI
