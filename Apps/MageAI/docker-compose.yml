@@ -55,7 +55,7 @@ x-vionetaos:
   scheme: http
   hostname: ""
   port_map: "6789"
-  index: /lab
+  index: /
   description:
     en_us: Your machine learning Env work with MageAi
   tagline:
