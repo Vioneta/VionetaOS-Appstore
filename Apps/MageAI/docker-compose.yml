@@ -1,0 +1,68 @@
+name: Mageai
+services:
+  mageai:
+    container_name: mageai
+    image: mageai/mageai:latest
+    command: mage start ${PROJECT_NAME}
+    network_mode: bridge
+    restart: unless-stopped
+    environment:
+      - PROJECT_NAME=mageai
+      - USER_CODE_PATH=/home/src/${PROJECT_NAME}
+    # command: /bin/bash -c "jupyter lab --no-browser --ip 0.0.0.0 --port $JUPYTER_PORT --notebook-dir $JUPYTER_ROOT --allow-root "
+    ports:
+      - target: 6789
+        published: "6789"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /DATA/AppData/$AppID/data
+        target: /home/src/
+    labels:
+      icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/MageAI/icon.png
+    x-vionetaos:
+      envs:
+        - container: PATH
+          description:
+            en_us: ""
+        - container: LANG
+          description:
+            en_us: ""
+        - container: LC_ALL
+          description:
+            en_us: ""
+      ports:
+        - container: "6789"
+          description:
+            en_us: MageAI
+      volumes:
+        - container: /home/src/
+          description:
+            en_us: MageAI notebook directory
+x-vionetaos:
+  main: mageai
+  architectures:
+    - arm64
+  author: Vioneta Team
+  category: AI
+  developer: MageAI
+  icon: https://raw.githubusercontent.com/Vioneta/Vioneta-Appstore/main/Apps/MageAI/icon.png
+  thumbnail: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Anaconda3/thumbnail.png
+  screenshot_link:
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Anaconda3/screenshot-1.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Anaconda3/screenshot-2.png
+    - https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Anaconda3/screenshot-3.png
+  scheme: http
+  hostname: ""
+  port_map: "6789"
+  index: /lab
+  description:
+    en_us: Your machine learning Env work with MageAi
+  tagline:
+    en_us: Your machine learning Env work with MageAi
+  tips:
+    en_us: Your machine learning Env work with MageAi
+    # before_install:
+    #   en_us: default password for the juperlab login is nvidia.
+  title:
+    en_us: Mageai
